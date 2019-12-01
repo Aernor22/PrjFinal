@@ -6,11 +6,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.security.core.GrantedAuthority;
-
 @Entity
 @Table(name = "papeis")
-public class Papel implements GrantedAuthority {
+public class Papel{
+	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -25,10 +24,22 @@ public class Papel implements GrantedAuthority {
 	public Papel(String papel) {
 		this.papel = papel;
 	}
-	
-	@Override
-	public String getAuthority() {
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getPapel() {
 		return papel;
 	}
+
+	public void setPapel(String papel) {
+		this.papel = papel;
+	}
+	
 
 }

@@ -18,4 +18,8 @@ public interface UsuarioRepositorio extends CrudRepository<Usuario, Long> {
 	
 	@Query("SELECT u FROM Usuario u WHERE u.habilitado = false")
 	List<Usuario> findDesabilitados();
+	
+//	@Query("SELECT u FROM Usuario u JOIN papeis p on p.papel = u.papel JOIN OrdemServico o ON o.instalador.id = u.id "
+//			+ "WHERE p.papel = 'ROLE_INSTALLER' AND o.dataFinalInstalacao is null AND o.dataContratacao+5 < CURDATE()") //Validar Querys
+//	List<Usuario> findInstaladoresComOsAtrasada();
 }
